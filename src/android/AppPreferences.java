@@ -36,8 +36,12 @@ public class AppPreferences extends CordovaPlugin implements OnSharedPreferenceC
 		Context context = cordova.getActivity().getApplicationContext();
 
 		String packageName = context.getPackageName();
+		
+		Log.d("", "PREFS Cordova packageName: " + packageName);
 
 		int resId = context.getResources().getIdentifier("apppreferences", "xml", packageName);
+		
+		Log.d("", "PREFS Cordova resId: " + resId);
 
 		if (resId > 0) {
 			PreferenceManager.setDefaultValues(context, resId, false);
